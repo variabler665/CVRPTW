@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVRPTW Kyiv | Авторадости</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Маршрутизация Авторадости</h1>
+            <p>ALNS для CVRPTW с гетерогенным флотом на дорогах Киева</p>
+        </div>
+        <div class="health" id="health"></div>
+    </header>
+    <main>
+        <section class="panel">
+            <h2>Депо и карта</h2>
+            <p>Кликните на карту, чтобы задать депо или добавить точку вручную.</p>
+            <div id="map"></div>
+            <div class="form-grid">
+                <label>Адрес депо</label>
+                <input type="text" id="depot-address" placeholder="ул. Саперно-Слободская 25" />
+                <label>Широта</label>
+                <input type="number" id="depot-lat" step="any" />
+                <label>Долгота</label>
+                <input type="number" id="depot-lon" step="any" />
+                <button id="save-depot">Сохранить депо</button>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>Автопарк</h2>
+            <div class="form-grid">
+                <input type="text" id="veh-name" placeholder="Название" />
+                <input type="number" id="veh-capacity" placeholder="Грузоподъемность" />
+                <button id="add-vehicle">Добавить</button>
+            </div>
+            <div id="vehicle-list"></div>
+            <label class="checkbox"><input type="checkbox" id="force-all"> Использовать все автомобили</label>
+        </section>
+        <section class="panel">
+            <h2>Заказы</h2>
+            <div class="form-grid">
+                <input id="order-id" placeholder="ID заказа" />
+                <input id="order-address" placeholder="Адрес" />
+                <input id="order-lat" placeholder="Широта" />
+                <input id="order-lon" placeholder="Долгота" />
+                <input id="order-volume" placeholder="Объем" />
+                <input id="order-window-start" placeholder="Окно от (мин)" />
+                <input id="order-window-end" placeholder="Окно до (мин)" />
+                <button id="add-order">Добавить</button>
+            </div>
+            <div class="upload">
+                <label>Импорт Excel/CSV</label>
+                <input type="file" id="file-input" />
+                <button id="import-file">Импорт</button>
+            </div>
+            <div id="order-list"></div>
+        </section>
+        <section class="panel">
+            <h2>Оптимизация</h2>
+            <button class="primary" id="run-solve">Запустить ALNS</button>
+            <div id="routes"></div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
