@@ -1,0 +1,98 @@
+:root {
+    --bg: #0f172a;
+    --panel: #111827;
+    --accent: #10b981;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    margin: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid #1f2937;
+}
+h1 {
+    margin: 0;
+}
+main {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.panel {
+    background: var(--panel);
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+#map {
+    height: 420px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+button {
+    background: #1f2937;
+    color: var(--text);
+    border: 1px solid #374151;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button.primary {
+    background: var(--accent);
+    color: #0b0f1a;
+    font-weight: 700;
+    border: none;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    align-items: center;
+}
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #0b1220;
+    color: var(--text);
+}
+#vehicle-list, #order-list, #routes {
+    margin-top: 12px;
+    display: grid;
+    gap: 8px;
+}
+.card {
+    padding: 10px;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    background: #0b1220;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.health {
+    color: var(--muted);
+}
+.order-actions button {
+    margin-right: 8px;
+}
+.route-label {
+    font-weight: 700;
+}
